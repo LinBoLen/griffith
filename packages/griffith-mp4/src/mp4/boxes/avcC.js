@@ -13,7 +13,7 @@ export default function avcC(buffer) {
   const SPS = []
   for (let i = 0; i < numOfSequenceParameterSets; i++) {
     const length = stream.readByte(2)
-    SPS.push(...stream.buffer.slice(stream.position, stream.position + length))
+    SPS.push(stream.buffer.slice(stream.position, stream.position + length))
     stream.position += length
   }
 
@@ -21,7 +21,7 @@ export default function avcC(buffer) {
   const PPS = []
   for (let i = 0; i < numOfPictureParameterSets; i++) {
     const length = stream.readByte(2)
-    PPS.push(...stream.buffer.slice(stream.position, stream.position + length))
+    PPS.push(stream.buffer.slice(stream.position, stream.position + length))
     stream.position += length
   }
 
